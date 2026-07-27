@@ -25,7 +25,7 @@ resource "aws_db_instance" "main" {
   vpc_security_group_ids = [var.db_security_group_id]
   
   skip_final_snapshot    = true
-
+  publicly_accessible    = true
   tags = {
     Name        = "${var.environment}-database"
     Environment = var.environment

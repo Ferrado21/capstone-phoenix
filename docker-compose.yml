@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:3000"
+    environment:
+      - PORT=3000
+      - DB_HOST=terraform-20260715142954066000000001.cn4u4q0copiw.eu-north-1.rds.amazonaws.com
+      - DB_PORT=5432
+      - DB_NAME=phoenix_db
+      - DB_USER=phoenix_user
+      - DB_PASSWORD=Forthnight21
+    restart: always

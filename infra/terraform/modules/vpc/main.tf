@@ -132,6 +132,7 @@ resource "aws_security_group" "db_sg" {
     from_port       = var.db_port
     to_port         = var.db_port
     protocol        = "tcp"
+    cidr_blocks     = [var.my_public_ip]
     security_groups = [aws_security_group.compute_sg.id]
   }
 
@@ -146,4 +147,8 @@ resource "aws_security_group" "db_sg" {
     Name        = "${var.environment}-db-sg"
     Environment = var.environment
   }
+}
+variable "my_public_ip" {
+  description = "My local public IP address for admin access"
+  type        = string
 }

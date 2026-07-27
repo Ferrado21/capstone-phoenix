@@ -16,3 +16,7 @@ output "rds_endpoint" {
   description = "The public endpoint to connect to the database"
   value       = module.rds.db_endpoint
 }
+output "app_server_public_ip" {
+  value       = module.compute.public_ip
+  description = "The public IP address of the compute instance"
+}
