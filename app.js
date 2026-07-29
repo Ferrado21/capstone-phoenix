@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
     const result = await pool.query('SELECT NOW()');
     res.json({
       status: 'healthy',
-      message: 'Capstone Phoenix API connected to RDS PostgreSQL!',
+      message: 'Capstone Phoenix API v2 connected to RDS PostgreSQL!',
       db_time: result.rows[0].now
     });
   } catch (err) {
